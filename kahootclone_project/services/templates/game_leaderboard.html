@@ -1,0 +1,54 @@
+{% extends "game_base.html" %}
+
+
+{% block title %}Leaderboard{% endblock %}
+
+<!--  -->
+
+{% block abovetopcontainer %}{% endblock %}
+
+<!--  -->
+
+{% block topcontainer %}
+<h3>Leaderboard of game {{ game.publicId }}</h3>
+{% endblock %}
+{% load static %}
+<!--  -->
+
+{% block bottomcontainer %}
+<div class="d-flex table-responsive leaderboard-container w-75 justify-content-center">
+  <table class="m-3 table table-sm table-border w-75">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">Position</th>
+        <th scope="col" class="text-center">Alias</th>
+        <th scope="col" class="text-center">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for par in game.participant_set.all %}
+      <tr>
+        <td class="text-center">{{forloop.counter}}</td>
+        <td class="text-center">{{par.alias}}</td>
+        <td class="text-center">{{par.points}}</td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+<a class="btn btn-primary  btn-lg mr-3 m-4" href="{{ game.questionnaire.get_absolute_url }}" role=" button">End game</a>
+
+{% endblock %}
+
+
+
+{% block audio %}
+<audio controls loop autoplay hidden>
+  <source src={% static 'services/audio/victory.mp3' %} type="audio/mpeg">
+
+  Your browser does not support the audio element.
+</audio>
+{% endblock %}

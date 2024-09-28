@@ -1,0 +1,45 @@
+{% extends 'game_base.html' %}
+
+{% block title %} Game {% endblock %}
+
+{% block headscripts %}
+{% load static %}
+<script src={% static 'services/js/game_update_participants.js' %}></script>
+{% endblock %}
+
+
+
+{% block topcontainer %}
+
+
+<h3>Join game at </h3>
+<h3><a class="join-link" href="https://kahootcloneczclient.onrender.com">https://kahootcloneczclient.onrender.com</a></h3>
+with ID:
+<h3 class="gameId">{{ publicId }}</h3>
+
+{% endblock %}
+
+
+
+{% block bottomcontainer %}
+
+<a class="btn btn-primary  btn-lg m-3" href="{% url 'game-countdown'%}" role=" button">
+    Get Started
+</a>
+<br />
+
+<p class="m-2">As soon as you log in, your alias will be displayed here.</p>
+<p class="m-2">Click on an alias to remove a participant.</p>
+<br />
+
+<div id="participants_list" class="d-flex align-content-center justify-content-center flex-wrap w-100 p-5"></div>
+{% endblock %}
+
+
+
+{% block audio %}
+<audio controls autoplay loop hidden>
+    <source src={% static 'services/audio/lobby.mp3' %} type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+{% endblock %}

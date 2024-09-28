@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+  <h1 class="text-center mb-5 me-4 ">My Questionaires</h1>
+
+  <div class="text-center">
+    <a class="btn btn-primary  btn-lg me-4 mb-4 not-game-btn" href="{% url 'questionnaire-create' %}">Create New Questionnaire</a>
+  </div>
+  {% if questionnaire_list %}
+  
+  <div class="container" id="list-questionnaires">
+    <div class="text-center mb-5">
+      <p class="lead">or select a questionnaire to modify it</p>
+    </div>
+    {% for questionnaire in questionnaire_list %}
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="d-flex flex-column flex-lg-row">
+  
+          <div class="row flex-fill">
+            <div class="col-sm-5">
+              <a class="btn btn-primary btn-sm" href="{{ questionnaire.get_absolute_url }}">{{ questionnaire.title }}</a>
+  
+            </div>
+  
+            <div class="col-sm-4 py-2">
+              <span class="badge bg-secondary">Last Update: {{questionnaire.updated_at}}</span>
+              <span class="badge bg-success">Nº of questions: {{questionnaire.question_set.all|length}}</span>
+            
+            </div>
+  
+            <div class="col-sm-3 text-lg-end">
+              <a href="{% url 'game-create' questionnaire.id %}" class="btn btn-primary m-2">Play!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  {% else %}
+  <p>There are no questionaires created yet.</p>
+  {% endif %}
+  {% endblock %}
+  
+  
+  

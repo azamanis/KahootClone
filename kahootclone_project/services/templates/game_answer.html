@@ -1,0 +1,50 @@
+{% extends "game_base.html" %}
+
+{% block abovetopcontainer %}
+<div class="d-flex flex-row m-5">
+  <h4>Time's up!</h4>
+</div>
+{% endblock %}
+
+
+
+{% block topcontainer %}
+
+<h3>{{question.question}}</h3>
+<br/>
+<h3>Correct answer: {{ correct_answer.answer }}</h3>
+<h6>Number of correct guesses: {{ num_correct_guesses }}/{{ num_total_guesses }}</h6>
+{% endblock %}
+
+{% block bottomcontainer %}
+
+<!-- <div class="col-md-6 alert alert-success container p-3 m-1 text-center w-50"><h4>{{ correct_answer.answer }}</h4></div> -->
+
+
+<a class="btn btn-primary  btn-lg mr-3 m-5" href="{% url 'game-countdown'%}" role=" button">Next</a>
+
+<h3>Distribution of guesses:</h3>
+
+<div>
+  <div class="row">
+    <div class="ans-0 col-md-6 alert container p-3 m-1 text-center answer-box"><h6>A. {{ answers_proportions.0 }}</h6></div>
+    <div class="ans-1 col-md-6 alert container p-3 m-1 text-center answer-box"><h6>B. {{ answers_proportions.1 }}</h6></div>
+  </div>
+  <div class="row">
+    <div class="ans-2 col-md-6 alert container p-3 m-1 text-center answer-box"><h6>C. {{ answers_proportions.2 }}</h6></div>
+    <div class="ans-3 col-md-6 alert container p-3 m-1 text-center answer-box"><h6>D. {{ answers_proportions.3 }}</h6></div>
+  </div>
+</div>
+
+<h3 class="m-2 mt-5">Participants' points:</h3>
+<br />
+
+<div class="d-flex align-content-center justify-content-center flex-wrap w-100 p-5">
+  {% for item in participants %}
+  <div class="alert alert-primary m-1">
+    {{ item.alias }} ({{ item.points }})
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

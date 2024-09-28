@@ -1,0 +1,36 @@
+{% extends 'game_base.html' %}
+
+
+{% block title %} Countdown {% endblock %}
+
+
+{% block headscripts %}
+{% load static %}
+<script src={% static 'services/js/game_countdown.js' %}></script>
+{% endblock %}
+
+
+{% block topcontainer %}
+<h3>Starting soon...</h3>
+<p>Game id: {{ game.publicId }}</p>
+<h3 id="countdown" class="gameId">{{game.countdownTime}}</h3>
+{% endblock %}
+
+
+
+{% block bottomcontainer %}
+<a class="btn btn-primary  btn-lg m-3" href="{% url 'game-countdown'%}" role=" button">Next</a>
+<!-- <div>La cuenta atras es {{game.countdownTime}}</div> -->
+<input id="cuenta-atras" hidden value="{{game.countdownTime}}">
+{% endblock %}
+
+
+
+
+{% block audio %}
+<audio controls loop autoplay hidden>
+    <source src={% static 'services/audio/waiting.mp3' %} type="audio/mpeg">
+
+    Your browser does not support the audio element.
+</audio>
+{% endblock %}

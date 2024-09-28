@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+<h1>Hi {{ user.username }}!</h1>
+
+
+<div class="">
+  <h2 class="text-center mb-5 me-4"> Your last questionnaires</h2>
+  {% if latest_questionnaire_list %}
+
+
+  <div class="d-flex flex-wrap justify-content-between">
+    {% for questionnaire in latest_questionnaire_list %}
+    <div class="my-card card mb-3 ">
+      <div class="card-body">
+        <h5 class="card-title mb-4">{{ questionnaire.title }}</h5>
+        <p class="card-text mb-5">Nº of questions: {{questionnaire.question_set.count}}</p>
+        <a href="{% url 'questionnaire-detail' questionnaire.id %}" class="stretched-link "> </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>There are no questionaires created yet.</p>
+  {% endif %}
+
+
+  <div class="text-center margin-top-5">
+    <a class="btn btn-primary  btn-lg me-4 mb-4 not-game-btn" href="{% url 'questionnaire-create' %}">Create New
+      Questionnaire</a>
+  </div>
+
+</div>
+{% else %}
+<div class="min-height-60vh d-flex flex-column container justify-content-center align-items-center w-100 overflow-scroll h-100">
+  <h3>You are not authenticated.</h3>
+  <a class="btn btn-outline-primary btn-normal-background m-4 " href="{% url 'login' %}">Log In</a>
+  <a class="btn btn-outline-primary btn-normal-background m-4 " href="{% url 'signup' %}">Sign Up</a>
+</div>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+<!-- Ejemplo de fichero home.html. 
+Esto es solo un ejemplo para empezar a trabajar, 
+se espera que lo modifiquéis tanto como sea necesario. 
+-->

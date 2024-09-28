@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post"
+  class="model-form d-flex flex-column container justify-content-center align-items-center w-100 overflow-scroll h-100">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+
+  <div class="d-flex flex-row">
+    <input type="submit" value="Submit" class="btn btn-success m-2" />
+    <input class="btn btn-danger m-2" type="button" value="Cancel" onclick="window.history.go(-1);">
+  </div>
+</form>
+{% endblock %}

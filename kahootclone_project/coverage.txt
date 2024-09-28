@@ -1,0 +1,56 @@
+Name                                                    Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------
+kahootclone/__init__.py                                     0      0   100%
+kahootclone/asgi.py                                         4      4     0%   10-16
+kahootclone/settings.py                                    37      3    92%   35, 174-176
+kahootclone/urls.py                                         7      0   100%
+kahootclone/wsgi.py                                         4      4     0%   10-16
+manage.py                                                  12      2    83%   12-13
+models/__init__.py                                          0      0   100%
+models/admin.py                                             9      0   100%
+models/apps.py                                              4      0   100%
+models/constants.py                                         5      0   100%
+models/forms.py                                             7      0   100%
+models/management/__init__.py                               0      0   100%
+models/management/commands/__init__.py                      0      0   100%
+models/management/commands/addparticipants.py              26     26     0%   1-55
+models/management/commands/createsu.py                     11     11     0%   1-20
+models/management/commands/populate.py                     87     87     0%   12-183
+models/migrations/0001_initial.py                          12      0   100%
+models/migrations/0002_alter_participant_points.py          4      0   100%
+models/migrations/0003_alter_game_publicid.py               5      0   100%
+models/migrations/0004_auto_20230323_1457.py                4      0   100%
+models/migrations/0005_alter_game_questionno.py             4      0   100%
+models/migrations/0005_auto_20230324_1036.py                4      0   100%
+models/migrations/0006_alter_game_questionno.py             4      0   100%
+models/migrations/0007_alter_game_questionno.py             4      0   100%
+models/migrations/0008_merge_20230325_1511.py               4      0   100%
+models/migrations/0009_alter_game_countdowntime.py          4      0   100%
+models/migrations/0010_alter_participant_options.py         4      0   100%
+models/migrations/0011_auto_20230402_1857.py                5      0   100%
+models/migrations/0012_alter_participant_options.py         4      0   100%
+models/migrations/0013_alter_participant_alias.py           4      0   100%
+models/migrations/0014_auto_20230414_1548.py                4      0   100%
+models/migrations/0015_alter_guess_unique_together.py       4      0   100%
+models/migrations/__init__.py                               0      0   100%
+models/models.py                                          141      0   100%
+models/urls.py                                              3      0   100%
+models/views.py                                            14      0   100%
+restServer/__init__.py                                      0      0   100%
+restServer/admin.py                                         0      0   100%
+restServer/apps.py                                          4      0   100%
+restServer/migrations/__init__.py                           0      0   100%
+restServer/models.py                                        0      0   100%
+restServer/serializer.py                                   14      0   100%
+restServer/urls.py                                          8      0   100%
+restServer/views.py                                        74      0   100%
+services/__init__.py                                        0      0   100%
+services/admin.py                                           0      0   100%
+services/apps.py                                            4      0   100%
+services/forms.py                                           0      0   100%
+services/migrations/__init__.py                             0      0   100%
+services/models.py                                          0      0   100%
+services/urls.py                                            3      0   100%
+services/views.py                                         207      0   100%
+-------------------------------------------------------------------------------------
+TOTAL                                                     759    137    82%

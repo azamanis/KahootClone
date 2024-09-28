@@ -1,0 +1,26 @@
+{% for item in participants %}
+<div>
+    
+    <button class="alert alert-primary m-1 alias" value="{{item.alias}}" href="{% url 'participant-remove' item.alias %}" >{{item.alias}}</button>
+</div>
+{% endfor %}
+
+
+<script>
+
+$(document).ready(function () {
+    $('button').click(function () {
+        var alias = $(this).val()
+        // hide this element
+        $(this).hide();
+        console.log("Deleting: " + alias)
+        $.ajax({
+            url: "/services/participantremove/"+alias+"/",
+            success: function (data) {
+              console.log("success deleting participant")
+            }
+        });
+    })
+});
+
+</script>

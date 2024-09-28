@@ -1,0 +1,57 @@
+{% extends "game_base.html" %}
+
+{% block title %}Question{% endblock %}
+
+{% block headscripts %}
+{% load static %}
+<script src={% static 'services/js/game_countdown.js' %}></script>
+{% endblock %}
+
+
+{% block abovetopcontainer %}
+<div class="d-flex flex-row m-3">
+  <h2>Remaining time:&nbsp&nbsp</h2>
+  <h2 id="countdown">{{game.countdownTime}}</h2>
+  <h2>s</h2>
+</div>
+{% endblock %}
+
+
+
+{% block topcontainer %}
+<p>Question:</p>
+<h3>{{question.question}}</h3>
+{% endblock %}
+
+
+
+{% block bottomcontainer %}
+
+<div>
+  <div class="row">
+    <div class="ans-0 col-md-6 alert container p-3 m-1 text-center answer-box"><h6>A. {{ answers.0 }}</h6></div>
+    <div class="ans-1 col-md-6 alert container p-3 m-1 text-center answer-box"><h6>B. {{ answers.1 }}</h6></div>
+  </div>
+  <div class="row">
+    <div class="ans-2 col-md-6 alert container p-3 m-1 text-center answer-box"><h6>C. {{ answers.2 }}</h6></div>
+    <div class="ans-3 col-md-6 alert container p-3 m-1 text-center answer-box"><h6>D. {{ answers.3 }}</h6></div>
+  </div>
+</div>
+
+
+<a class="btn btn-primary  btn-lg mr-3 m-5" href="{% url 'game-countdown'%}" role=" button">End question</a>
+
+
+
+<input id="cuenta-atras" hidden value="{{game.countdownTime}}">
+{% endblock %}
+
+
+
+{% block audio %}
+<audio controls loop autoplay hidden>
+  <source src={% static 'services/audio/question.mp3' %} type="audio/mpeg">
+
+  Your browser does not support the audio element.
+</audio>
+{% endblock %}

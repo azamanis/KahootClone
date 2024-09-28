@@ -1,0 +1,102 @@
+:root {
+    --color-background: #c5c5c5;
+    /* rgb(189, 160, 188); */
+    --color-game-heading: #a0a0a0;
+    --color-btn-primary: #212c5f;
+    --color-ans-0: #E4B363;
+    --color-ans-1: #678D58;
+    --color-ans-2: #c04553;
+    --color-ans-3: #586994;
+}
+
+.alert-info {
+    background-color: var(--color-game-heading) !important;
+    border-color: var(--color-game-heading) !important;
+    color: black !important;
+}
+
+.vh-fill {
+    height: 80vh;
+}
+
+.bg-info {
+    background-color: var(--color-background) !important;
+}
+
+body {
+    /* font-family: 'Lucida Console', monospace; */
+    /* font-family: 'Courier New', monospace; */
+    font-family: 'Ubuntu mono', monospace;
+    /* background-color: blue; */
+}
+
+.inner-section {
+    height: 80vh;
+}
+
+.page-title {
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+.join-form {
+    width: 300pt;
+    max-width: 96vw;
+}
+
+.col-md-6.answer-box {
+    width: 150pt;
+    max-width: 40vw;
+}
+
+button h4,
+button h5,
+button h6 {
+    margin: 0;
+}
+
+.block-content {
+    max-height: 100vh;
+}
+
+/* .footer{
+    width: 100%;
+    max-height: 10vh;
+}
+
+.footer p {
+    font-size: 0.8em;
+} */
+
+
+.ans-0 {
+    background-color: var(--color-ans-0) !important;
+}
+
+.ans-1 {
+    background-color: var(--color-ans-1) !important;
+}
+
+.ans-2 {
+    background-color: var(--color-ans-2) !important;
+}
+
+.ans-3 {
+    background-color: var(--color-ans-3) !important;
+}
+
+.btn-primary {
+    --bs-btn-color: rgb(185, 185, 185) !important;
+    background-color: var(--color-btn-primary) !important;
+    border-color: var(--color-btn-primary) !important;
+}
